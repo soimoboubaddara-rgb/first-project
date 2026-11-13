@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>👑 لوحة مول المحل</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="topbar glass">
+      <div class="brand">👑 <span id="salonName"></span></div>
+      <div class="top-actions">
+        <span class="who" id="who"></span>
+        <button class="btn ghost sm" id="langBtn"></button>
+        <button class="btn danger sm" id="logoutBtn" data-i18n="logout"></button>
+      </div>
+    </header>
+
+    <div class="stats" id="stats"></div>
+
+    <!-- فريق العمل -->
+    <section class="section glass">
+      <h2 data-i18n="team"></h2>
+      <form id="barberForm" class="form-grid" novalidate>
+        <div><label data-i18n="barberName"></label><input id="bName" maxlength="40" required></div>
+        <div><label data-i18n="barberUser"></label><input id="bUser" maxlength="20" autocapitalize="none" autocomplete="off" required></div>
+        <div><label data-i18n="barberPass"></label><input id="bPass" type="text" maxlength="40" autocomplete="off" required></div>
+        <button class="btn" type="submit" data-i18n="addBarber"></button>
+      </form>
+      <div class="err" id="barberErr"></div>
+      <div class="table-wrap"><table>
+        <thead><tr><th data-i18n="colName"></th><th data-i18n="colUser"></th><th data-i18n="colActions"></th></tr></thead>
+        <tbody id="barbersBody"></tbody>
+      </table></div>
+    </section>
+
+    <!-- المداخيل حسب الحلاق -->
+    <section class="section glass">
+      <h2 data-i18n="revenueByBarber"></h2>
+      <div class="table-wrap"><table>
+        <thead><tr><th data-i18n="colBarber"></th><th data-i18n="colBookings"></th><th data-i18n="colRevenue"></th></tr></thead>
+        <tbody id="revenueBody"></tbody>
+      </table></div>
+    </section>
+
+    <!-- الخدمات -->
+    <section class="section glass">
+      <h2 data-i18n="services"></h2>
+      <form id="serviceForm" class="form-grid" novalidate>
+        <div><label data-i18n="svcNameAr"></label><input id="sAr" maxlength="40" required></div>
+        <div><label data-i18n="svcNameFr"></label><input id="sFr" maxlength="40" required></div>
+        <div><label data-i18n="price"></label><input id="sPrice" type="number" min="0" step="1" required></div>
+        <div><label data-i18n="duration"></label><input id="sDur" type="number" min="30" step="30" value="30" required></div>
+        <button class="btn" type="submit" data-i18n="addService"></button>
+      </form>
+      <div class="table-wrap"><table>
+        <thead><tr><th data-i18n="colService"></th><th data-i18n="colPrice"></th><th data-i18n="duration"></th><th data-i18n="colActions"></th></tr></thead>
+        <tbody id="servicesBody"></tbody>
+      </table></div>
+    </section>
+
+    <!-- المواعيد -->
+    <section class="section glass">
+      <h2 data-i18n="bookings"></h2>
+      <div class="form-grid">
+        <div><label data-i18n="filterDate"></label><input type="date" id="fDate"></div>
+        <div><label data-i18n="filterBarber"></label><select id="fBarber"></select></div>
+        <div><label data-i18n="filterStatus"></label><select id="fStatus"></select></div>
+      </div>
+      <div class="table-wrap"><table>
+        <thead><tr>
+          <th data-i18n="colCustomer"></th><th data-i18n="colPhone"></th><th data-i18n="colBarber"></th><th data-i18n="colService"></th>
+          <th data-i18n="colDate"></th><th data-i18n="colTime"></th><th data-i18n="colPrice"></th><th data-i18n="colStatus"></th>
+        </tr></thead>
+        <tbody id="bookingsBody"></tbody>
+      </table></div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+  <script src="owner-dashboard.js"></script>
+</body>
+</html>

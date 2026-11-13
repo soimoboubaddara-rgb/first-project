@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>💈 حجز الصالونات</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="topbar glass">
+      <div class="brand">💈 <span data-i18n="appName"></span></div>
+      <div class="top-actions">
+        <button class="btn ghost sm" id="langBtn"></button>
+        <a class="btn ghost sm" href="login.html" data-i18n="staffLogin"></a>
+      </div>
+    </header>
+
+    <section class="hero glass">
+      <h1 data-i18n="heroTitle"></h1>
+      <p data-i18n="heroSub"></p>
+    </section>
+
+    <!-- 1. الصالون -->
+    <section class="section glass" id="secSalon">
+      <h2 data-i18n="step1"></h2>
+      <div class="grid" id="salons"></div>
+    </section>
+
+    <!-- 2. الحلاق -->
+    <section class="section glass hidden" id="secBarber">
+      <h2 data-i18n="step2"></h2>
+      <div class="grid" id="barbers"></div>
+    </section>
+
+    <!-- 3. الخدمة -->
+    <section class="section glass hidden" id="secService">
+      <h2 data-i18n="step3"></h2>
+      <div class="grid" id="services"></div>
+    </section>
+
+    <!-- 4. التاريخ والوقت -->
+    <section class="section glass hidden" id="secTime">
+      <h2 data-i18n="step4"></h2>
+      <div class="field" style="max-width:260px">
+        <label for="date" data-i18n="date"></label>
+        <input type="date" id="date">
+      </div>
+      <div class="slots" id="slots"></div>
+      <p class="muted hidden" id="noSlots" data-i18n="noSlots"></p>
+    </section>
+
+    <!-- 5. بيانات الزبون -->
+    <section class="section glass hidden" id="secForm">
+      <h2 data-i18n="step5"></h2>
+      <div class="summary" id="summary"></div>
+      <form id="bookForm" novalidate>
+        <div class="field">
+          <label for="custName" data-i18n="fullName"></label>
+          <input id="custName" maxlength="60" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="custPhone" data-i18n="phone"></label>
+          <input id="custPhone" type="tel" maxlength="20" autocomplete="tel" inputmode="tel" required>
+        </div>
+        <div class="err" id="formErr"></div>
+        <button class="btn block" type="submit" data-i18n="confirmBook"></button>
+      </form>
+    </section>
+
+    <!-- التأكيد -->
+    <section class="section glass hidden center" id="secDone">
+      <h2 data-i18n="bookingDone"></h2>
+      <p class="muted" data-i18n="bookingDoneSub"></p>
+      <div class="summary" id="doneSummary"></div>
+      <a class="btn wa block" id="waBtn" target="_blank" rel="noopener" data-i18n="sendWhatsapp"></a>
+      <button class="btn ghost block mt" id="newBtn" data-i18n="newBooking"></button>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+  <script src="customer.js"></script>
+</body>
+</html>

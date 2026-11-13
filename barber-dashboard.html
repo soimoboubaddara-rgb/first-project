@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>✂️ لوحة الحلاق</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="topbar glass">
+      <div class="brand">✂️ <span id="salonName"></span></div>
+      <div class="top-actions">
+        <span class="who" id="who"></span>
+        <button class="btn ghost sm" id="langBtn"></button>
+        <button class="btn danger sm" id="logoutBtn" data-i18n="logout"></button>
+      </div>
+    </header>
+
+    <div class="stats" id="stats"></div>
+
+    <section class="section glass">
+      <h2 data-i18n="myQueue"></h2>
+      <div id="nextClient"></div>
+      <div id="queue"></div>
+    </section>
+
+    <section class="section glass">
+      <h2 data-i18n="myBookings"></h2>
+      <div class="table-wrap"><table>
+        <thead><tr>
+          <th data-i18n="colCustomer"></th><th data-i18n="colPhone"></th><th data-i18n="colService"></th>
+          <th data-i18n="colDate"></th><th data-i18n="colTime"></th><th data-i18n="colPrice"></th><th data-i18n="colStatus"></th>
+        </tr></thead>
+        <tbody id="allBody"></tbody>
+      </table></div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+  <script src="barber-dashboard.js"></script>
+</body>
+</html>
